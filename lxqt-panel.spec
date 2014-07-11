@@ -1,7 +1,7 @@
 Summary:	Launcher panel for the LXQt desktop
 Name:		lxqt-panel
 Version:	0.7.0
-Release:	2
+Release:	3
 License:	LGPLv2.1+
 Group:		Graphical desktop/Other
 Url:		http://lxqt.org
