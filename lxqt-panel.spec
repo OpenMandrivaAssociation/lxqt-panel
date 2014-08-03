@@ -1,38 +1,45 @@
+%define git 20140802
 Summary:	Launcher panel for the LXQt desktop
 Name:		lxqt-panel
-Version:	0.7.0
-Release:	3
+Version:	0.8.0
+%if %git
+Release:	0.%git.1
+Source0:	%{name}-%{git}.tar.xz
+%else
+Release:	1
+Source0:	http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
+%endif
 License:	LGPLv2.1+
 Group:		Graphical desktop/Other
 Url:		http://lxqt.org
-Source0:	http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 BuildRequires:	cmake
 BuildRequires:	icu-devel
 BuildRequires:	lm_sensors-devel
-BuildRequires:	qt4-devel
+BuildRequires:	qt5-devel
 BuildRequires:	pkgconfig(alsa)
 BuildRequires:	pkgconfig(libmenu-cache)
 BuildRequires:	pkgconfig(libpulse)
 BuildRequires:	pkgconfig(libstatgrab)
-BuildRequires:	pkgconfig(lxqt)
-BuildRequires:	pkgconfig(lxqt-globalkeys)
-BuildRequires:	pkgconfig(lxqt-globalkeys-ui)
-BuildRequires:	pkgconfig(lxqtmount)
-BuildRequires:	pkgconfig(qtxdg)
-BuildRequires:	pkgconfig(sysstat)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xcomposite)
 BuildRequires:	pkgconfig(xdamage)
 BuildRequires:	pkgconfig(xrender)
+BuildRequires:	cmake(lxqt-qt5)
+BuildRequires:	cmake(lxqt-globalkeys-qt5)
+BuildRequires:	cmake(lxqt-globalkeys-ui-qt5)
+BuildRequires:	cmake(lxqtmount-qt5)
+BuildRequires:	cmake(qt5xdg)
+BuildRequires:	cmake(sysstat-qt5)
 
 %description
 Launcher panel for the LXQt desktop.
 
 %files
 %{_bindir}/lxqt-panel
+%{_datadir}/lxqt-qt5/lxqt-panel
 %{_datadir}/lxqt/lxqt-panel
 %{_libdir}/lxqt-panel/*.so
-%{_sysconfdir}/lxqt/panel.conf
+%{_sysconfdir}/qt5
 
 #----------------------------------------------------------------------------
 
@@ -49,8 +56,12 @@ Development files for the LXQt panel.
 #----------------------------------------------------------------------------
 
 %prep
+%if %git
+%setup -q -n %{name}-%{git}
+%else
 %setup -q -c %{name}-%{version}
-%cmake
+%endif
+%cmake -DUSE_QT5:BOOL=ON
 
 %build
 %make -C build
