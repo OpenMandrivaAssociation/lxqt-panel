@@ -30,6 +30,8 @@ BuildRequires:	cmake(lxqt-globalkeys-ui-qt5)
 BuildRequires:	cmake(lxqtmount-qt5)
 BuildRequires:	cmake(qt5xdg)
 BuildRequires:	cmake(sysstat-qt5)
+BuildRequires:	cmake(Qt5LinguistTools)
+BuildRequires:	cmake(Qt5X11Extras)
 
 %description
 Launcher panel for the LXQt desktop.
