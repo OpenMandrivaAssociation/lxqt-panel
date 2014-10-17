@@ -1,9 +1,9 @@
-%define git 20140802
+%define git 0
 Summary:	Launcher panel for the LXQt desktop
 Name:		lxqt-panel
 Version:	0.8.0
 %if %git
-Release:	0.%git.2
+Release:	0.%git.1
 Source0:	%{name}-%{git}.tar.xz
 %else
 Release:	1
@@ -38,7 +38,7 @@ Launcher panel for the LXQt desktop.
 
 %files
 %{_bindir}/lxqt-panel
-%{_datadir}/lxqt-qt5/lxqt-panel
+%{_datadir}/lxqt-qt5/translations/lxqt-panel
 %{_datadir}/lxqt/lxqt-panel
 %{_libdir}/lxqt-panel/*.so
 %{_sysconfdir}/qt5
@@ -61,7 +61,7 @@ Development files for the LXQt panel.
 %if %git
 %setup -q -n %{name}-%{git}
 %else
-%setup -q -c %{name}-%{version}
+%setup -q
 %endif
 %cmake -DUSE_QT5:BOOL=ON
 
