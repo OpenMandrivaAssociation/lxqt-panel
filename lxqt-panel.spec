@@ -6,12 +6,13 @@ Version:	0.8.0
 Release:	0.%git.1
 Source0:	%{name}-%{git}.tar.xz
 %else
-Release:	2
+Release:	3
 Source0:	http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 %endif
 License:	LGPLv2.1+
 Group:		Graphical desktop/Other
 Url:		http://lxqt.org
+Patch0:		lxqt-panel-0.8.0-omv-settings.patch
 BuildRequires:	cmake
 BuildRequires:	icu-devel
 BuildRequires:	lm_sensors-devel
@@ -63,6 +64,7 @@ Development files for the LXQt panel.
 %else
 %setup -q
 %endif
+%apply_patches
 %cmake -DUSE_QT5:BOOL=ON
 
 %build

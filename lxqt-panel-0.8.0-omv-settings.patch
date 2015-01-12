@@ -1,0 +1,46 @@
+diff -Naur lxqt-panel-0.8.0/panel/resources/panel.conf lxqt-panel-0.8.0.tpg/panel/resources/panel.conf
+--- lxqt-panel-0.8.0/panel/resources/panel.conf	2014-10-13 15:27:26.000000000 +0000
++++ lxqt-panel-0.8.0.tpg/panel/resources/panel.conf	2015-01-12 23:29:13.392700479 +0000
+@@ -6,21 +6,25 @@
+ desktop=0
+ 
+ [mainmenu]
++alignment=Left
+ type=mainmenu
++text=OpenMandriva
++showText=true
+ 
+ [desktopswitch]
+ type=desktopswitch
+ 
+ [quicklaunch]
+ type=quicklaunch
+-apps/size=5
+-apps/1/desktop=firefox.desktop
+-apps/2/desktop=chromium-browser.desktop
+-apps/3/desktop=pcmanfm-qt.desktop
+-apps/4/desktop=KMail.desktop
+-apps/5/desktop=lxqt-config.desktop
++apps\size=4
++apps\1\desktop=/usr/share/applications/firefox.desktop
++apps\2\desktop=/usr/share/applications/packanfm-qt.desktop
++apps\3\desktop=/usr/share/applications/qterminal.desktop
++apps\4\desktop=/usr/share/applications/openmandriva-drakconf.desktop
++alignment=Left
+ 
+ [taskbar]
++alignment=Right
+ type=taskbar
+ 
+ [tray]
+@@ -31,6 +35,10 @@
+ 
+ [clock]
+ type=clock
++autoRotate=true
++showDate=below
++dateFormat=yyyy-MM-dd
++timeFormat=HH:mm
+ 
+ [panelvolume]
+ device=0
