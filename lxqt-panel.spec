@@ -6,7 +6,7 @@ Version:	0.8.0
 Release:	0.%git.1
 Source0:	%{name}-%{git}.tar.xz
 %else
-Release:	5
+Release:	6
 Source0:	http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 %endif
 License:	LGPLv2.1+
@@ -33,6 +33,7 @@ BuildRequires:	cmake(qt5xdg)
 BuildRequires:	cmake(sysstat-qt5)
 BuildRequires:	cmake(Qt5LinguistTools)
 BuildRequires:	cmake(Qt5X11Extras)
+Requires:	xscreensaver
 
 %description
 Launcher panel for the LXQt desktop.
