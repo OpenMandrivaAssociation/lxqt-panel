@@ -1,12 +1,12 @@
 %define git 0
 Summary:	Launcher panel for the LXQt desktop
 Name:		lxqt-panel
-Version:	0.8.0
+Version:	0.9.0
 %if %git
 Release:	0.%git.1
 Source0:	%{name}-%{git}.tar.xz
 %else
-Release:	6
+Release:	1
 Source0:	http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 %endif
 License:	LGPLv2.1+
@@ -25,10 +25,10 @@ BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xcomposite)
 BuildRequires:	pkgconfig(xdamage)
 BuildRequires:	pkgconfig(xrender)
-BuildRequires:	cmake(lxqt-qt5)
-BuildRequires:	cmake(lxqt-globalkeys-qt5)
-BuildRequires:	cmake(lxqt-globalkeys-ui-qt5)
-BuildRequires:	cmake(lxqtmount-qt5)
+BuildRequires:	cmake(lxqt)
+BuildRequires:	cmake(lxqt-globalkeys)
+BuildRequires:	cmake(lxqt-globalkeys-ui)
+BuildRequires:	cmake(lxqtmount)
 BuildRequires:	cmake(qt5xdg)
 BuildRequires:	cmake(sysstat-qt5)
 BuildRequires:	cmake(Qt5LinguistTools)
