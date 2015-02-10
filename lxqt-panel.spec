@@ -84,6 +84,7 @@ Development files for the LXQt panel.
 
 # workaround
 sed -i -e 's/Comment\[ru_RU\].*//' -e 's/Name\[ru_RU\].*//' %{buildroot}%{_datadir}/lxqt/lxqt-panel/mount.desktop
+sed -i -e 's/Comment\[de\].*//' -e 's/Name\[de\].*//' %{buildroot}%{_datadir}/lxqt/lxqt-panel/networkmonitor.desktop
 
 for desktop in %{buildroot}/%{_datadir}/lxqt/lxqt-panel/*.desktop; do
 	# Exclude category as been Service 
