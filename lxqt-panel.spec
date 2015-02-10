@@ -82,8 +82,10 @@ Development files for the LXQt panel.
 %install
 %makeinstall_std -C build
 
+# workaround
+sed -i -e 's/Comment\[ru_RU\].*//' -e 's/Name\[ru_RU\].*//' %{buildroot}%{_datadir}/lxqt/lxqt-panel/mount.desktop
+
 for desktop in %{buildroot}/%{_datadir}/lxqt/lxqt-panel/*.desktop; do
 	# Exclude category as been Service 
 	desktop-file-edit --remove-category=LXQt --remove-only-show-in=LXQt --add-only-show-in=X-LXQt ${desktop}
 done
-
