@@ -6,7 +6,7 @@ Version:	0.9.0
 Release:	0.%git.1
 Source0:	%{name}-%{git}.tar.xz
 %else
-Release:	2
+Release:	3
 Source0:	http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 %endif
 License:	LGPLv2.1+
@@ -36,7 +36,12 @@ BuildRequires:	cmake(Qt5LinguistTools)
 BuildRequires:	cmake(Qt5X11Extras)
 BuildRequires:	cmake(KF5GuiAddons)
 BuildRequires:	extra-cmake-modules5
+BuildRequires:	desktop-file-utils
 Suggests:	xscreensaver
+
+%rename	razorqt-panel
+%rename	razorqt-autosuspend
+%rename	razorqt-appswitcher
 
 %description
 Launcher panel for the LXQt desktop.
@@ -76,4 +81,9 @@ Development files for the LXQt panel.
 
 %install
 %makeinstall_std -C build
+
+for desktop in %{buildroot}/%{_datadir}/lxqt/lxqt-panel/*.desktop; do
+	# Exclude category as been Service 
+	desktop-file-edit --remove-category=LXQt --remove-only-show-in=LXQt --add-only-show-in=X-LXQt ${desktop}
+done
 
