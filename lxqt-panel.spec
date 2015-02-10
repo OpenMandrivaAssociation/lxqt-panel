@@ -40,7 +40,7 @@ Launcher panel for the LXQt desktop.
 
 %files
 %{_bindir}/lxqt-panel
-%{_datadir}/lxqt-qt5/translations/lxqt-panel
+%{_datadir}/lxqt/translations/lxqt-panel
 %{_datadir}/lxqt/lxqt-panel
 %{_libdir}/lxqt-panel/*.so
 %{_sysconfdir}/qt5
