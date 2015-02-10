@@ -25,6 +25,7 @@ BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xcomposite)
 BuildRequires:	pkgconfig(xdamage)
 BuildRequires:	pkgconfig(xrender)
+BuildRequires:	pkgconfig(xcb-util)
 BuildRequires:	cmake(lxqt)
 BuildRequires:	cmake(lxqt-globalkeys)
 BuildRequires:	cmake(lxqt-globalkeys-ui)
@@ -33,6 +34,8 @@ BuildRequires:	cmake(qt5xdg)
 BuildRequires:	cmake(sysstat-qt5)
 BuildRequires:	cmake(Qt5LinguistTools)
 BuildRequires:	cmake(Qt5X11Extras)
+BuildRequires:	cmake(KF5GuiAddons)
+BuildRequires:	extra-cmake-modules5
 Requires:	xscreensaver
 
 %description
