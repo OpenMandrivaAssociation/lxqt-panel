@@ -6,7 +6,7 @@ Version:	0.9.0
 Release:	0.%git.1
 Source0:	%{name}-%{git}.tar.xz
 %else
-Release:	3
+Release:	4
 Source0:	http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 %endif
 License:	LGPLv2.1+
@@ -87,6 +87,6 @@ sed -i -e 's/Comment\[ru_RU\].*//' -e 's/Name\[ru_RU\].*//' %{buildroot}%{_datad
 sed -i -e 's/Comment\[de\].*//' -e 's/Name\[de\].*//' %{buildroot}%{_datadir}/lxqt/lxqt-panel/networkmonitor.desktop
 
 for desktop in %{buildroot}/%{_datadir}/lxqt/lxqt-panel/*.desktop; do
-	# Exclude category as been Service 
+	# Exclude category as been Service
 	desktop-file-edit --remove-category=LXQt --remove-only-show-in=LXQt --add-only-show-in=X-LXQt ${desktop}
 done
