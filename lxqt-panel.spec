@@ -61,7 +61,7 @@ Launcher panel for the LXQt desktop.
 %{_datadir}/lxqt/translations/lxqt-panel
 %{_datadir}/lxqt/lxqt-panel
 %{_libdir}/lxqt-panel/*.so
-%{_sysconfdir}/qt5
+%{_sysconfdir}/xdg/lxqt/panel.conf
 
 #----------------------------------------------------------------------------
 
@@ -84,7 +84,7 @@ Development files for the LXQt panel.
 %setup -q
 %endif
 %apply_patches
-%cmake
+%cmake_qt5
 
 %build
 %make -C build
