@@ -37,6 +37,7 @@ BuildRequires:	cmake(Qt5DBus)
 BuildRequires:	cmake(Qt5LinguistTools)
 BuildRequires:	cmake(Qt5Xml)
 BuildRequires:	cmake(Qt5X11Extras)
+BuildRequires:	cmake(KF5GuiAddons)
 BuildRequires:	cmake(KF5WindowSystem)
 BuildRequires:	extra-cmake-modules5
 Suggests:	xscreensaver
