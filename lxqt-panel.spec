@@ -39,7 +39,14 @@ BuildRequires:	cmake(Qt5Xml)
 BuildRequires:	cmake(Qt5X11Extras)
 BuildRequires:	cmake(KF5GuiAddons)
 BuildRequires:	cmake(KF5WindowSystem)
+BuildRequires:	cmake(KF5Solid)
 BuildRequires:	extra-cmake-modules5
+BuildRequires:	pkgconfig(x11)
+BuildRequires:	pkgconfig(xcomposite)
+BuildRequires:	pkgconfig(xdamage)
+BuildRequires:	pkgconfig(xrender)
+BuildRequires:	pkgconfig(xcb)
+BuildRequires:	pkgconfig(xcb-damage)
 Suggests:	xscreensaver
 
 %rename	razorqt-panel
