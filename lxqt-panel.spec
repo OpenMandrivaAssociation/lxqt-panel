@@ -6,7 +6,7 @@ Version:	0.9.0
 Release:	0.%git.1
 Source0:	%{name}-%{git}.tar.xz
 %else
-Release:	5
+Release:	6
 Source0:	http://lxqt.org/downloads/lxqt/%{version}/%{name}-%{version}.tar.xz
 %endif
 License:	LGPLv2.1+
@@ -16,7 +16,7 @@ Patch0:		lxqt-panel-0.8.0-omv-settings.patch
 BuildRequires:	cmake
 BuildRequires:	icu-devel
 BuildRequires:	lm_sensors-devel
-BuildRequires:	qt5-devel
+BuildRequires:	qmake5
 BuildRequires:	pkgconfig(alsa)
 BuildRequires:	pkgconfig(libmenu-cache)
 BuildRequires:	pkgconfig(libpulse)
@@ -32,9 +32,12 @@ BuildRequires:	cmake(lxqt-globalkeys-ui)
 BuildRequires:	cmake(lxqtmount)
 BuildRequires:	cmake(qt5xdg)
 BuildRequires:	cmake(sysstat-qt5)
+BuildRequires:	cmake(Qt5Widgets)
+BuildRequires:	cmake(Qt5DBus)
 BuildRequires:	cmake(Qt5LinguistTools)
+BuildRequires:	cmake(Qt5Xml)
 BuildRequires:	cmake(Qt5X11Extras)
-BuildRequires:	cmake(KF5GuiAddons)
+BuildRequires:	cmake(KF5WindowSystem)
 BuildRequires:	extra-cmake-modules5
 Suggests:	xscreensaver
 
@@ -73,7 +76,7 @@ Development files for the LXQt panel.
 %setup -q
 %endif
 %apply_patches
-%cmake -DUSE_QT5:BOOL=ON
+%cmake
 
 %build
 %make -C build
