@@ -40,6 +40,7 @@ BuildRequires:	cmake(Qt5X11Extras)
 BuildRequires:	cmake(KF5GuiAddons)
 BuildRequires:	cmake(KF5WindowSystem)
 BuildRequires:	cmake(KF5Solid)
+BuildRequires:	cmake(dbusmenu-qt5)
 BuildRequires:	extra-cmake-modules5
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xcomposite)
