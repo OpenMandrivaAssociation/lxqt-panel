@@ -1,11 +1,14 @@
---- lxqt-panel-0.10.0/panel/resources/panel.conf.0000~	2015-11-13 15:50:12.354868659 +0100
-+++ lxqt-panel-0.10.0/panel/resources/panel.conf	2015-11-13 15:53:38.249860897 +0100
-@@ -2,25 +2,32 @@ panels=panel1
+diff -Naur lxqt-panel-0.10.0/panel/resources/panel.conf lxqt-panel-0.10.0.tpg/panel/resources/panel.conf
+--- lxqt-panel-0.10.0/panel/resources/panel.conf	2015-10-31 00:22:47.000000000 +0000
++++ lxqt-panel-0.10.0.tpg/panel/resources/panel.conf	2016-02-03 19:51:49.530324957 +0000
+@@ -2,25 +2,48 @@
  
  [panel1]
  plugins=mainmenu,desktopswitch,quicklaunch,taskbar,tray,statusnotifier,mount,volume,clock,showdesktop
++width=100
++width-percent=true
 +iconSize=32
-+panelSize=32
++panelSize=38
  position=Bottom
  desktop=0
  
@@ -13,10 +16,12 @@
 +alignment=left
  type=mainmenu
 +text=OpenMandriva
-+ShowText=true
++showText=true
++menu_file=/etc/xdg/menus/lxqt-applications.menu
  
  [desktopswitch]
  type=desktopswitch
++rows=2
  
  [quicklaunch]
  type=quicklaunch
@@ -35,13 +40,26 @@
  [taskbar]
  type=taskbar
 +alignment=Right
++autoRotate=true
++buttonHeight=100
++buttonStyle=IconText
++buttonWidth=400
++closeOnMiddleClick=true
++groupingEnabled=true
++raiseOnCurrentDesktop=false
++showDesktopNum=0
++showGroupOnHover=true
++showOnlyCurrentScreenTasks=false
++showOnlyMinimizedTasks=true
++showOnlyOneDesktopTasks=false
  
  [tray]
  type=tray
-@@ -30,10 +37,15 @@ type=mount
+@@ -30,10 +53,16 @@
  
  [clock]
  type=clock
++alignment=Right
 +autoRotate=true
 +showDate=below
 +dateFormat=yyyy-MM-dd

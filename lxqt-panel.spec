@@ -1,4 +1,5 @@
 %define git 0
+
 Summary:	Launcher panel for the LXQt desktop
 Name:		lxqt-panel
 Version:	0.10.0
@@ -6,7 +7,7 @@ Version:	0.10.0
 Release:	1.%git.1
 Source0:	%{name}-%{git}.tar.xz
 %else
-Release:	2
+Release:	3
 Source0:	https://github.com/lxde/%{name}/archive/%{name}-%{version}.tar.xz
 %endif
 License:	LGPLv2.1+
