@@ -7,7 +7,7 @@ Version:	0.10.0
 Release:	1.%git.1
 Source0:	%{name}-%{git}.tar.xz
 %else
-Release:	9
+Release:	10
 Source0:	https://github.com/lxde/%{name}/archive/%{name}-%{version}.tar.xz
 %endif
 License:	LGPLv2.1+
@@ -29,9 +29,9 @@ BuildRequires:	pkgconfig(xdamage)
 BuildRequires:	pkgconfig(xrender)
 BuildRequires:	pkgconfig(xcb-util)
 BuildRequires:	cmake(lxqt)
+BuildRequires:	cmake(KF5Solid)
 BuildRequires:	cmake(lxqt-globalkeys)
 BuildRequires:	cmake(lxqt-globalkeys-ui)
-BuildRequires:	cmake(lxqtmount)
 BuildRequires:	cmake(qt5xdg)
 BuildRequires:	cmake(sysstat-qt5)
 BuildRequires:	cmake(Qt5Widgets)
