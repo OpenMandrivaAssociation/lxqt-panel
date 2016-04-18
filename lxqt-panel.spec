@@ -7,13 +7,17 @@ Version:	0.10.0
 Release:	1.%git.1
 Source0:	%{name}-%{git}.tar.xz
 %else
-Release:	10
+Release:	11
 Source0:	https://github.com/lxde/%{name}/archive/%{name}-%{version}.tar.xz
 %endif
 License:	LGPLv2.1+
 Group:		Graphical desktop/Other
 Url:		http://lxqt.org
 Patch0:		lxqt-panel-0.8.0-omv-settings.patch
+# Patch for autohide issue https://github.com/lxde/lxqt/issues/871
+# taken from https://github.com/lxde/lxqt-panel/pull/275
+Patch1:		lxqt-panel-0.10.0-autohide.patch
+
 BuildRequires:	cmake
 BuildRequires:	icu-devel
 BuildRequires:	lm_sensors-devel
