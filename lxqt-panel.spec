@@ -66,6 +66,7 @@ Launcher panel for the LXQt desktop.
 %{_datadir}/lxqt/lxqt-panel
 %{_libdir}/lxqt-panel/*.so
 %{_sysconfdir}/xdg/lxqt/panel.conf
+%{_mandir}/man1/lxqt-panel.1.*
 
 #----------------------------------------------------------------------------
 
