@@ -8,7 +8,7 @@ diff -Naur lxqt-panel-0.11.0/panel/resources/panel.conf lxqt-panel-0.11.0.tpg/pa
 +width=100
 +width-percent=true
 +iconSize=32
-+panelSize=38
++panelSize=48
  position=Bottom
  desktop=0
  
@@ -31,7 +31,7 @@ diff -Naur lxqt-panel-0.11.0/panel/resources/panel.conf lxqt-panel-0.11.0.tpg/pa
 +apps/2/desktop=/usr/share/applications/pcmanfm-qt.desktop
 +apps/3/desktop=/usr/share/applications/qterminal.desktop
 +apps/4/desktop=/usr/share/applications/openmandriva-drakconf.desktop
-+alignment=Left 
++alignment=Left
  
  [taskbar]
  type=taskbar

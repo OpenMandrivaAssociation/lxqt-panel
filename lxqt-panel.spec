@@ -7,7 +7,7 @@ Version:	0.11.0
 Release:	1.%git.1
 Source0:	%{name}-%{git}.tar.xz
 %else
-Release:	2
+Release:	3
 Source0:	https://github.com/lxde/%{name}/archive/%{name}-%{version}.tar.xz
 %endif
 License:	LGPLv2.1+
@@ -66,7 +66,7 @@ Launcher panel for the LXQt desktop.
 %{_bindir}/lxqt-panel
 %{_datadir}/lxqt/lxqt-panel
 %{_libdir}/lxqt-panel/*.so
-%{_sysconfdir}/xdg/lxqt/panel.conf
+%{_sysconfdir}/xdg/qt5/lxqt/panel.conf
 %{_mandir}/man1/lxqt-panel.1.*
 
 #----------------------------------------------------------------------------
@@ -90,7 +90,7 @@ Development files for the LXQt panel.
 %setup -q
 %endif
 %apply_patches
-%cmake_qt5 -DPULL_TRANSLATIONS=NO -G Ninja
+%cmake_qt5 -DPULL_TRANSLATIONS=NO -DLXQT_ETC_XDG_DIR="%{_sysconfdir}/xdg/qt5" -G Ninja
 
 %build
 %ninja -C build
