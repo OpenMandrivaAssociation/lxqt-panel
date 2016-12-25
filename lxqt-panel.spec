@@ -7,7 +7,7 @@ Version:	0.11.0
 Release:	1.%git.1
 Source0:	%{name}-%{git}.tar.xz
 %else
-Release:	1
+Release:	2
 Source0:	https://github.com/lxde/%{name}/archive/%{name}-%{version}.tar.xz
 %endif
 License:	LGPLv2.1+
@@ -16,6 +16,7 @@ Url:		http://lxqt.org
 Patch0:		lxqt-panel-0.8.0-omv-settings.patch
 
 BuildRequires:	cmake
+BuildRequires:	ninja
 BuildRequires:	icu-devel
 BuildRequires:	lm_sensors-devel
 BuildRequires:	qmake5
@@ -51,6 +52,7 @@ BuildRequires:	pkgconfig(xdamage)
 BuildRequires:	pkgconfig(xrender)
 BuildRequires:	pkgconfig(xcb)
 BuildRequires:	pkgconfig(xcb-damage)
+Requires:	lxqt-l10n
 Suggests:	xscreensaver
 
 %rename	razorqt-panel
@@ -62,7 +64,6 @@ Launcher panel for the LXQt desktop.
 
 %files
 %{_bindir}/lxqt-panel
-%{_datadir}/lxqt/translations/lxqt-panel
 %{_datadir}/lxqt/lxqt-panel
 %{_libdir}/lxqt-panel/*.so
 %{_sysconfdir}/xdg/lxqt/panel.conf
@@ -89,10 +90,10 @@ Development files for the LXQt panel.
 %setup -q
 %endif
 %apply_patches
-%cmake_qt5
+%cmake_qt5 -DPULL_TRANSLATIONS=NO -G Ninja
 
 %build
-%make -C build
+%ninja -C build
 
 %install
-%makeinstall_std -C build
+%ninja_install -C build
