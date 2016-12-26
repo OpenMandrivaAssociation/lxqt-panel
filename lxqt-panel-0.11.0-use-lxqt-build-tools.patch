@@ -1,0 +1,22 @@
+diff -Naur lxqt-panel-0.11.0/CMakeLists.txt lxqt-panel-0.11.0.tpg/CMakeLists.txt
+--- lxqt-panel-0.11.0/CMakeLists.txt	2016-09-23 22:45:47.000000000 +0000
++++ lxqt-panel-0.11.0.tpg/CMakeLists.txt	2016-12-26 10:40:32.991658910 +0000
+@@ -1,5 +1,6 @@
+ cmake_minimum_required(VERSION 3.0.2 FATAL_ERROR)
+ project(lxqt-panel)
++set(LXQTBT_MINIMUM_VERSION "0.1.0")
+ 
+ option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
+ option(PULL_TRANSLATIONS "Pull translations" ON)
+@@ -57,9 +58,10 @@
+ find_package(lxqt REQUIRED)
+ find_package(lxqt-globalkeys REQUIRED)
+ find_package(lxqt-globalkeys-ui REQUIRED)
+-
++find_package(lxqt-build-tools ${LXQTBT_MINIMUM_VERSION} REQUIRED)
+ 
+ include(LXQtTranslate)
++include(LXQtConfigVars)
+ 
+ # Warning: This must be before add_subdirectory(panel). Move with caution.
+ set(PLUGIN_DIR "${CMAKE_INSTALL_FULL_LIBDIR}/lxqt-panel")

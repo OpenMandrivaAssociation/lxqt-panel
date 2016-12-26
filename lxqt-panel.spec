@@ -14,7 +14,7 @@ License:	LGPLv2.1+
 Group:		Graphical desktop/Other
 Url:		http://lxqt.org
 Patch0:		lxqt-panel-0.8.0-omv-settings.patch
-
+Patch1:		lxqt-panel-0.11.0-use-lxqt-build-tools.patch
 BuildRequires:	cmake
 BuildRequires:	ninja
 BuildRequires:	icu-devel
@@ -34,6 +34,7 @@ BuildRequires:	cmake(lxqt)
 BuildRequires:	cmake(KF5Solid)
 BuildRequires:	cmake(lxqt-globalkeys)
 BuildRequires:	cmake(lxqt-globalkeys-ui)
+BuildRequires:	cmake(lxqt-build-tools)
 BuildRequires:	cmake(qt5xdg)
 BuildRequires:	cmake(sysstat-qt5)
 BuildRequires:	cmake(Qt5Widgets)
@@ -90,7 +91,7 @@ Development files for the LXQt panel.
 %setup -q
 %endif
 %apply_patches
-%cmake_qt5 -DPULL_TRANSLATIONS=NO -DLXQT_ETC_XDG_DIR="%{_sysconfdir}/xdg/qt5" -G Ninja
+%cmake_qt5 -DPULL_TRANSLATIONS=NO -G Ninja
 
 %build
 %ninja -C build
