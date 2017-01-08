@@ -2,12 +2,12 @@
 
 Summary:	Launcher panel for the LXQt desktop
 Name:		lxqt-panel
-Version:	0.11.0
+Version:	0.11.1
 %if %git
 Release:	1.%git.1
 Source0:	%{name}-%{git}.tar.xz
 %else
-Release:	3
+Release:	1
 Source0:	https://github.com/lxde/%{name}/archive/%{name}-%{version}.tar.xz
 %endif
 License:	LGPLv2.1+
@@ -15,11 +15,9 @@ Group:		Graphical desktop/Other
 Url:		http://lxqt.org
 Patch0:		lxqt-panel-0.8.0-omv-settings.patch
 Patch1:		lxqt-panel-0.11.0-use-lxqt-build-tools.patch
-BuildRequires:	cmake
-BuildRequires:	ninja
+BuildRequires:	cmake(ECM)
 BuildRequires:	icu-devel
 BuildRequires:	lm_sensors-devel
-BuildRequires:	qmake5
 BuildRequires:	pkgconfig(alsa)
 BuildRequires:	pkgconfig(libmenu-cache)
 BuildRequires:	pkgconfig(libpulse)
@@ -46,7 +44,6 @@ BuildRequires:	cmake(KF5GuiAddons)
 BuildRequires:	cmake(KF5WindowSystem)
 BuildRequires:	cmake(KF5Solid)
 BuildRequires:	cmake(dbusmenu-qt5)
-BuildRequires:	extra-cmake-modules5
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xcomposite)
 BuildRequires:	pkgconfig(xdamage)
