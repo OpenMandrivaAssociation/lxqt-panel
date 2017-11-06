@@ -1,7 +1,6 @@
-diff -Naur lxqt-panel-0.11.0/panel/resources/panel.conf lxqt-panel-0.11.0.tpg/panel/resources/panel.conf
---- lxqt-panel-0.11.0/panel/resources/panel.conf	2016-09-23 22:45:47.000000000 +0000
-+++ lxqt-panel-0.11.0.tpg/panel/resources/panel.conf	2016-12-24 00:05:50.649441025 +0000
-@@ -2,21 +2,48 @@
+--- lxqt-panel-0.12.0/panel/resources/panel.conf.0000~	2017-10-21 21:47:44.000000000 +0200
++++ lxqt-panel-0.12.0/panel/resources/panel.conf	2017-11-06 23:59:48.340475591 +0100
+@@ -2,21 +2,48 @@ panels=panel1
  
  [panel1]
  plugins=mainmenu,desktopswitch,quicklaunch,taskbar,tray,statusnotifier,mount,volume,clock,showdesktop
@@ -25,13 +24,12 @@ diff -Naur lxqt-panel-0.11.0/panel/resources/panel.conf lxqt-panel-0.11.0.tpg/pa
  
  [quicklaunch]
  type=quicklaunch
--alignment=Left
 +apps/size=4
 +apps/1/desktop=/usr/share/applications/qupzilla.desktop
 +apps/2/desktop=/usr/share/applications/pcmanfm-qt.desktop
 +apps/3/desktop=/usr/share/applications/qterminal.desktop
 +apps/4/desktop=/usr/share/applications/openmandriva-drakconf.desktop
-+alignment=Left
+ alignment=Left
  
  [taskbar]
  type=taskbar
@@ -51,10 +49,10 @@ diff -Naur lxqt-panel-0.11.0/panel/resources/panel.conf lxqt-panel-0.11.0.tpg/pa
  
  [tray]
  type=tray
-@@ -26,10 +53,16 @@
+@@ -26,10 +53,16 @@ type=mount
  
- [clock]
- type=clock
+ [worldclock]
+ type=worldclock
 +alignment=Right
 +autoRotate=true
 +showDate=below
