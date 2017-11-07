@@ -1,0 +1,11 @@
+--- lxqt-panel-0.12.0/plugin-statusnotifier/statusnotifierwidget.cpp.omv~	2017-11-07 14:18:45.168158655 +0100
++++ lxqt-panel-0.12.0/plugin-statusnotifier/statusnotifierwidget.cpp	2017-11-07 14:19:42.678118042 +0100
+@@ -84,6 +84,8 @@ void StatusNotifierWidget::itemRemoved(c
+ void StatusNotifierWidget::realign()
+ {
+     LXQt::GridLayout *layout = qobject_cast<LXQt::GridLayout*>(this->layout());
++    if(!layout) // Workaround for apparent Qt bug -- try harder
++        layout = reinterpret_cast<LXQt::GridLayout*>(this->layout());
+     layout->setEnabled(false);
+ 
+     ILXQtPanel *panel = mPlugin->panel();
