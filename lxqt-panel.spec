@@ -7,7 +7,7 @@ Version:	0.12.0
 Release:	0.%git.1
 Source0:	%{name}-%{git}.tar.xz
 %else
-Release:	2
+Release:	3
 Source0:	https://downloads.lxqt.org/downloads/%{name}/%{version}/%{name}-%{version}.tar.xz
 %endif
 License:	LGPLv2.1+
@@ -64,9 +64,9 @@ Launcher panel for the LXQt desktop.
 %{_bindir}/lxqt-panel
 %{_datadir}/lxqt/lxqt-panel
 %{_libdir}/lxqt-panel/*.so
-%{_sysconfdir}/xdg/qt5/lxqt/panel.conf
-%{_sysconfdir}/xdg/qt5/autostart/lxqt-panel.desktop
-%{_sysconfdir}/xdg/qt5/menus/lxqt-applications.menu
+%{_sysconfdir}/xdg/lxqt/panel.conf
+%{_sysconfdir}/xdg/autostart/lxqt-panel.desktop
+%{_sysconfdir}/xdg/menus/lxqt-applications.menu
 %{_datadir}/desktop-directories/lxqt-leave.directory
 %{_datadir}/desktop-directories/lxqt-settings.directory
 %{_mandir}/man1/lxqt-panel.1.*

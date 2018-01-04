@@ -16,7 +16,7 @@
  type=mainmenu
 +text=OpenMandriva
 +showText=true
-+menu_file=/etc/xdg/qt5/menus/lxqt-applications.menu
++menu_file=/etc/xdg/menus/lxqt-applications.menu
  
  [desktopswitch]
  type=desktopswitch
