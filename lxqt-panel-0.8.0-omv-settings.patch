@@ -1,11 +1,12 @@
---- lxqt-panel-0.12.0/panel/resources/panel.conf.0000~	2017-10-21 21:47:44.000000000 +0200
-+++ lxqt-panel-0.12.0/panel/resources/panel.conf	2017-11-06 23:59:48.340475591 +0100
+diff -up lxqt-panel-0.13.0/panel/resources/panel.conf.0000~ lxqt-panel-0.13.0/panel/resources/panel.conf
+--- lxqt-panel-0.13.0/panel/resources/panel.conf.0000~	2018-05-21 21:24:34.000000000 +0200
++++ lxqt-panel-0.13.0/panel/resources/panel.conf	2018-07-04 21:35:04.821943452 +0200
 @@ -2,21 +2,48 @@ panels=panel1
  
  [panel1]
- plugins=mainmenu,desktopswitch,quicklaunch,taskbar,tray,statusnotifier,mount,volume,clock,showdesktop
+ plugins=mainmenu,desktopswitch,quicklaunch,taskbar,tray,statusnotifier,mount,volume,worldclock,showdesktop
 +width=100
-+width-percent=true
++width-precent=true
 +iconSize=32
 +panelSize=48
  position=Bottom
@@ -25,10 +26,10 @@
  [quicklaunch]
  type=quicklaunch
 +apps/size=4
-+apps/1/desktop=/usr/share/applications/qupzilla.desktop
++apps/1/desktop=/usr/share/applications/falkon.desktop
 +apps/2/desktop=/usr/share/applications/pcmanfm-qt.desktop
 +apps/3/desktop=/usr/share/applications/qterminal.desktop
-+apps/4/desktop=/usr/share/applications/openmandriva-drakconf.desktop
++apps/4/desktop=/usr/share/applications/systemsettings.desktop
  alignment=Left
  
  [taskbar]
