@@ -2,12 +2,12 @@
 
 Summary:	Launcher panel for the LXQt desktop
 Name:		lxqt-panel
-Version:	0.13.0
+Version:	0.14.0
 %if %git
 Release:	1.%git.1
 Source0:	%{name}-%{git}.tar.xz
 %else
-Release:	3
+Release:	1
 Source0:	https://downloads.lxqt.org/downloads/%{name}/%{version}/%{name}-%{version}.tar.xz
 %endif
 License:	LGPLv2.1+
@@ -50,7 +50,6 @@ BuildRequires:	pkgconfig(xdamage)
 BuildRequires:	pkgconfig(xrender)
 BuildRequires:	pkgconfig(xcb)
 BuildRequires:	pkgconfig(xcb-damage)
-Requires:	lxqt-l10n
 Suggests:	xscreensaver
 
 %rename	razorqt-panel
@@ -60,7 +59,7 @@ Suggests:	xscreensaver
 %description
 Launcher panel for the LXQt desktop.
 
-%files
+%files -f %{name}.lang
 %{_bindir}/lxqt-panel
 %{_datadir}/lxqt/lxqt-panel
 %{_libdir}/lxqt-panel/*.so
@@ -99,3 +98,4 @@ Development files for the LXQt panel.
 
 %install
 %ninja_install -C build
+%find_lang %{name} --with-qt --all-name
