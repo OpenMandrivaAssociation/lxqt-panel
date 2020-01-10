@@ -90,7 +90,7 @@ Development files for the LXQt panel.
 %else
 %setup -q
 %endif
-%apply_patches
+%autopatch -p1
 %cmake_qt5 -DPULL_TRANSLATIONS=NO -G Ninja
 
 %build
