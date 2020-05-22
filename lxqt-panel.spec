@@ -2,7 +2,7 @@
 
 Summary:	Launcher panel for the LXQt desktop
 Name:		lxqt-panel
-Version:	0.15.0
+Version:	0.15.1
 %if %git
 Release:	0.%git.1
 Source0:	%{name}-%{git}.tar.xz
@@ -33,6 +33,7 @@ BuildRequires:	cmake(KF5Solid)
 BuildRequires:	cmake(lxqt-globalkeys)
 BuildRequires:	cmake(lxqt-globalkeys-ui)
 BuildRequires:	cmake(lxqt-build-tools)
+BuildRequires:  cmake(Qt5Concurrent)
 BuildRequires:	cmake(qt5xdg)
 BuildRequires:	cmake(sysstat-qt5)
 BuildRequires:	cmake(Qt5Widgets)
