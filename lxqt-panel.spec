@@ -33,7 +33,7 @@ BuildRequires:	cmake(KF5Solid)
 BuildRequires:	cmake(lxqt-globalkeys)
 BuildRequires:	cmake(lxqt-globalkeys-ui)
 BuildRequires:	cmake(lxqt-build-tools)
-BuildRequires:  cmake(Qt5Concurrent)
+BuildRequires:	cmake(Qt5Concurrent)
 BuildRequires:	cmake(qt5xdg)
 BuildRequires:	cmake(sysstat-qt5)
 BuildRequires:	cmake(Qt5Widgets)
@@ -53,14 +53,15 @@ BuildRequires:	pkgconfig(xcb)
 BuildRequires:	pkgconfig(xcb-damage)
 Suggests:	xscreensaver
 
-%rename	razorqt-panel
-%rename	razorqt-autosuspend
-%rename	razorqt-appswitcher
+%rename razorqt-panel
+%rename razorqt-autosuspend
+%rename razorqt-appswitcher
 
 %description
 Launcher panel for the LXQt desktop.
 
 %files -f %{name}.lang
+%dir %{_libdir}/%{name}
 %{_bindir}/lxqt-panel
 %{_datadir}/lxqt/lxqt-panel
 %{_libdir}/lxqt-panel/*.so
