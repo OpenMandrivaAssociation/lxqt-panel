@@ -2,7 +2,7 @@
 
 Summary:	Launcher panel for the LXQt desktop
 Name:		lxqt-panel
-Version:	0.17.0
+Version:	1.0.0
 %if %git
 Release:	1
 Source0:	%{name}-%{git}.tar.xz
