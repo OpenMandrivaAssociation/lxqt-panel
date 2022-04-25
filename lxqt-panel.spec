@@ -28,6 +28,7 @@ BuildRequires:	pkgconfig(xcomposite)
 BuildRequires:	pkgconfig(xdamage)
 BuildRequires:	pkgconfig(xrender)
 BuildRequires:	pkgconfig(xcb-util)
+BuildRequires:	pkgconfig(xcb-image)
 BuildRequires:	pkgconfig(xtst)
 BuildRequires:	cmake(lxqt)
 BuildRequires:	cmake(KF5Solid)
@@ -92,11 +93,11 @@ Development files for the LXQt panel.
 
 %prep
 %if %git
-%setup -q -n %{name}-%{git}
+%autosetup -n %{name}-%{git} -p1
 %else
-%setup -q
+%autosetup -p1
 %endif
-%autopatch -p1
+
 %cmake_qt5 -DPULL_TRANSLATIONS=NO -G Ninja
 
 %build
