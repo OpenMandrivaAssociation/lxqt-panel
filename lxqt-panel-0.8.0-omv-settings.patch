@@ -1,20 +1,22 @@
-diff -up lxqt-panel-0.13.0/panel/resources/panel.conf.0000~ lxqt-panel-0.13.0/panel/resources/panel.conf
---- lxqt-panel-0.13.0/panel/resources/panel.conf.0000~	2018-05-21 21:24:34.000000000 +0200
-+++ lxqt-panel-0.13.0/panel/resources/panel.conf	2018-07-04 21:35:04.821943452 +0200
-@@ -2,21 +2,48 @@ panels=panel1
+diff -up lxqt-panel-1.1.0/panel/resources/panel.conf.1~ lxqt-panel-1.1.0/panel/resources/panel.conf
+--- lxqt-panel-1.1.0/panel/resources/panel.conf.1~	2022-04-16 15:08:11.000000000 +0200
++++ lxqt-panel-1.1.0/panel/resources/panel.conf	2022-04-23 20:17:39.423317275 +0200
+@@ -1,6 +1,10 @@
+ panels=panel1
  
  [panel1]
- plugins=mainmenu,desktopswitch,quicklaunch,taskbar,tray,statusnotifier,mount,volume,worldclock,showdesktop
 +width=100
 +width-precent=true
 +iconSize=32
 +panelSize=48
+ plugins=mainmenu,desktopswitch,quicklaunch,taskbar,statusnotifier,tray,mount,volume,worldclock,showdesktop
  position=Bottom
  desktop=0
- 
+@@ -8,29 +12,55 @@ desktop=0
  [mainmenu]
-+alignment=left
  type=mainmenu
+ filterClear=true
++alignment=left
 +text=OpenMandriva
 +showText=true
 +menu_file=/etc/xdg/menus/lxqt-applications.menu
@@ -25,21 +27,23 @@ diff -up lxqt-panel-0.13.0/panel/resources/panel.conf.0000~ lxqt-panel-0.13.0/pa
  
  [quicklaunch]
  type=quicklaunch
+ alignment=Left
 +apps/size=4
 +apps/1/desktop=/usr/share/applications/falkon.desktop
 +apps/2/desktop=/usr/share/applications/pcmanfm-qt.desktop
 +apps/3/desktop=/usr/share/applications/qterminal.desktop
 +apps/4/desktop=/usr/share/applications/systemsettings.desktop
- alignment=Left
  
  [taskbar]
  type=taskbar
+-buttonWidth=220
 +alignment=Right
 +autoRotate=true
 +buttonHeight=100
 +buttonStyle=IconText
 +buttonWidth=400
-+closeOnMiddleClick=true
+ closeOnMiddleClick=true
+-groupingEnabled=false
 +groupingEnabled=true
 +raiseOnCurrentDesktop=false
 +showDesktopNum=0
@@ -48,9 +52,8 @@ diff -up lxqt-panel-0.13.0/panel/resources/panel.conf.0000~ lxqt-panel-0.13.0/pa
 +showOnlyMinimizedTasks=true
 +showOnlyOneDesktopTasks=false
  
- [tray]
- type=tray
-@@ -26,10 +53,16 @@ type=mount
+ [mount]
+ type=mount
  
  [worldclock]
  type=worldclock

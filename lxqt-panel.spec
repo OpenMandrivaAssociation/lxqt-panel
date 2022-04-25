@@ -2,9 +2,9 @@
 
 Summary:	Launcher panel for the LXQt desktop
 Name:		lxqt-panel
-Version:	1.0.0
+Version:	1.1.0
 %if %git
-Release:	1
+Release:	0.%{git}.1
 Source0:	%{name}-%{git}.tar.xz
 %else
 Release:	1
@@ -68,13 +68,12 @@ Launcher panel for the LXQt desktop.
 %{_datadir}/lxqt/panel.conf
 %{_sysconfdir}/xdg/autostart/lxqt-panel.desktop
 %{_sysconfdir}/xdg/menus/lxqt-applications.menu
+%{_sysconfdir}/xdg/menus/lxqt-applications-compact.menu
+%{_sysconfdir}/xdg/menus/lxqt-applications-simple.menu
 %{_datadir}/desktop-directories/lxqt-leave.directory
 %{_datadir}/desktop-directories/lxqt-settings.directory
 %{_mandir}/man1/lxqt-panel.1.*
-%lang(arn) %{_datadir}/lxqt/translations/lxqt-panel/*_arn.qm
-%lang(arn) %{_datadir}/lxqt/translations/lxqt-panel/*/*_arn.qm
-%lang(ast) %{_datadir}/lxqt/translations/lxqt-panel/*_ast.qm
-%lang(ast) %{_datadir}/lxqt/translations/lxqt-panel/*/*_ast.qm
+%dir %lang(arn) %{_datadir}/lxqt/translations/lxqt-panel
 
 #----------------------------------------------------------------------------
 
