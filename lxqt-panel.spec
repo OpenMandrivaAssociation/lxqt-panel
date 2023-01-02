@@ -68,6 +68,7 @@ Launcher panel for the LXQt desktop.
 %{_datadir}/lxqt/lxqt-panel
 %{_libdir}/lxqt-panel/*.so
 %{_datadir}/lxqt/panel.conf
+%{_datadir}/lxqt/panel/qeyes-types/
 %{_sysconfdir}/xdg/autostart/lxqt-panel.desktop
 %{_sysconfdir}/xdg/menus/lxqt-applications.menu
 %{_sysconfdir}/xdg/menus/lxqt-applications-compact.menu
