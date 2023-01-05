@@ -7,13 +7,13 @@ Version:	1.2.1
 Release:	1.%{git}.1
 Source0:	%{name}-%{git}.tar.xz
 %else
-Release:	1
+Release:	2
 Source0:	https://github.com/lxqt/lxqt-panel/releases/download/%{version}/lxqt-panel-%{version}.tar.xz
 %endif
 License:	LGPLv2.1+
 Group:		Graphical desktop/Other
 Url:		http://lxqt.org
-Patch0:		lxqt-panel-0.8.0-omv-settings.patch
+#Patch0:		lxqt-panel-0.8.0-omv-settings.patch
 Patch1:		lxqt-panel-0.12.0-workaround-statusnotifier-crash.patch
 BuildRequires:	cmake(ECM)
 BuildRequires:	icu-devel
