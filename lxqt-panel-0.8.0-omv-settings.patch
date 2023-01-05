@@ -49,7 +49,7 @@ diff -up lxqt-panel-1.1.0/panel/resources/panel.conf.1~ lxqt-panel-1.1.0/panel/r
 +showDesktopNum=0
 +showGroupOnHover=true
 +showOnlyCurrentScreenTasks=false
-+showOnlyMinimizedTasks=true
++showOnlyMinimizedTasks=false
 +showOnlyOneDesktopTasks=false
  
  [mount]
