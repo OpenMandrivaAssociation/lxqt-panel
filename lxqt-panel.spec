@@ -52,7 +52,8 @@ BuildRequires:	pkgconfig(xcomposite)
 BuildRequires:	pkgconfig(xdamage)
 BuildRequires:	pkgconfig(xrender)
 BuildRequires:	pkgconfig(xcb)
-BuildRequires:	pkgconfig(xcb-damage)
+BuildRequires: pkgconfig(xcb-damage)
+Requires: kwindowsystem-x11 
 Suggests:	xscreensaver
 
 %rename razorqt-panel
