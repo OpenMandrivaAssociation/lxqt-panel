@@ -7,7 +7,7 @@ Version:	1.2.1
 Release:	1.%{git}.1
 Source0:	%{name}-%{git}.tar.xz
 %else
-Release:	4
+Release:	5
 Source0:	https://github.com/lxqt/lxqt-panel/releases/download/%{version}/lxqt-panel-%{version}.tar.xz
 %endif
 License:	LGPLv2.1+
