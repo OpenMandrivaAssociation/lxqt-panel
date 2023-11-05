@@ -1,15 +1,14 @@
-%define git 0
+#define git 0
 
 Summary:	Launcher panel for the LXQt desktop
 Name:		lxqt-panel
-Version:	1.3.0
-%if %git
-Release:	1.%{git}1
+Version:	1.4.0
+%if 0%{?git:1}
 Source0:	%{name}-%{git}.tar.xz
 %else
-Release:	1
 Source0:	https://github.com/lxqt/lxqt-panel/releases/download/%{version}/lxqt-panel-%{version}.tar.xz
 %endif
+Release:	%{?git:0.%{git}.}1
 License:	LGPLv2.1+
 Group:		Graphical desktop/Other
 Url:		http://lxqt.org
@@ -53,6 +52,8 @@ BuildRequires:	pkgconfig(xdamage)
 BuildRequires:	pkgconfig(xrender)
 BuildRequires:	pkgconfig(xcb)
 BuildRequires: pkgconfig(xcb-damage)
+BuildRequires:	cmake(lxqt-menu-data)
+Requires:	lxqt-menu-data
 Requires: kwindowsystem-x11 
 Suggests:	xscreensaver
 
@@ -71,11 +72,6 @@ Launcher panel for the LXQt desktop.
 %{_datadir}/lxqt/panel.conf
 %{_datadir}/lxqt/panel/qeyes-types/
 %{_sysconfdir}/xdg/autostart/lxqt-panel.desktop
-%{_sysconfdir}/xdg/menus/lxqt-applications.menu
-%{_sysconfdir}/xdg/menus/lxqt-applications-compact.menu
-%{_sysconfdir}/xdg/menus/lxqt-applications-simple.menu
-%{_datadir}/desktop-directories/lxqt-leave.directory
-%{_datadir}/desktop-directories/lxqt-settings.directory
 %{_mandir}/man1/lxqt-panel.1.*
 %dir %lang(arn) %{_datadir}/lxqt/translations/lxqt-panel
 
@@ -94,12 +90,7 @@ Development files for the LXQt panel.
 #----------------------------------------------------------------------------
 
 %prep
-%if %git
-%autosetup -n %{name}-%{git} -p1
-%else
-%autosetup -p1
-%endif
-
+%autosetup -p1 -n %{name}-%{?git:%{git}}%{!?git:%{version}}
 %cmake_qt5 -DPULL_TRANSLATIONS=NO -G Ninja
 
 %build
