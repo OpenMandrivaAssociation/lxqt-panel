@@ -2,7 +2,7 @@
 
 Summary:	Launcher panel for the LXQt desktop
 Name:		lxqt-panel
-Version:	1.4.0
+Version:	2.0.0
 %if 0%{?git:1}
 Source0:	%{name}-%{git}.tar.xz
 %else
@@ -30,22 +30,21 @@ BuildRequires:	pkgconfig(xcb-util)
 BuildRequires:	pkgconfig(xcb-image)
 BuildRequires:	pkgconfig(xtst)
 BuildRequires:	cmake(lxqt)
-BuildRequires:	cmake(KF5Solid)
+BuildRequires:	cmake(KF6Solid)
 BuildRequires:	cmake(lxqt-globalkeys)
 BuildRequires:	cmake(lxqt-globalkeys-ui)
-BuildRequires:	cmake(lxqt-build-tools)
-BuildRequires:	cmake(Qt5Concurrent)
-BuildRequires:	cmake(qt5xdg)
-BuildRequires:	cmake(sysstat-qt5)
-BuildRequires:	cmake(Qt5Widgets)
-BuildRequires:	cmake(Qt5DBus)
-BuildRequires:	cmake(Qt5LinguistTools)
-BuildRequires:	cmake(Qt5Xml)
-BuildRequires:	cmake(Qt5X11Extras)
-BuildRequires:	cmake(KF5GuiAddons)
-BuildRequires:	cmake(KF5WindowSystem)
-BuildRequires:	cmake(KF5Solid)
-BuildRequires:	cmake(dbusmenu-qt5)
+BuildRequires:	cmake(lxqt2-build-tools)
+BuildRequires:	cmake(Qt6Concurrent)
+BuildRequires:	cmake(qt6xdg)
+BuildRequires:	cmake(sysstat-qt6)
+BuildRequires:	cmake(Qt6Widgets)
+BuildRequires:	cmake(Qt6DBus)
+BuildRequires:	cmake(Qt6LinguistTools)
+BuildRequires:	cmake(Qt6Xml)
+BuildRequires:	cmake(KF6GuiAddons)
+BuildRequires:	cmake(KF6WindowSystem)
+BuildRequires:	cmake(KF6Solid)
+BuildRequires:	cmake(dbusmenu-lxqt)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xcomposite)
 BuildRequires:	pkgconfig(xdamage)
@@ -54,7 +53,7 @@ BuildRequires:	pkgconfig(xcb)
 BuildRequires: pkgconfig(xcb-damage)
 BuildRequires:	cmake(lxqt-menu-data)
 Requires:	lxqt-menu-data
-Requires: kwindowsystem-x11 
+Requires: kf6-kwindowsystem-backend-x11 
 Suggests:	xscreensaver
 
 %rename razorqt-panel

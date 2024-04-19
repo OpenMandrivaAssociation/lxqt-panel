@@ -1,6 +1,6 @@
-diff -up lxqt-panel-1.1.0/panel/resources/panel.conf.1~ lxqt-panel-1.1.0/panel/resources/panel.conf
---- lxqt-panel-1.1.0/panel/resources/panel.conf.1~	2022-04-16 15:08:11.000000000 +0200
-+++ lxqt-panel-1.1.0/panel/resources/panel.conf	2022-04-23 20:17:39.423317275 +0200
+diff -up lxqt-panel-2.0.0/panel/resources/panel.conf.1~ lxqt-panel-2.0.0/panel/resources/panel.conf
+--- lxqt-panel-2.0.0/panel/resources/panel.conf.1~	2024-04-19 22:26:41.998482438 +0200
++++ lxqt-panel-2.0.0/panel/resources/panel.conf	2024-04-19 22:46:09.117618815 +0200
 @@ -1,6 +1,10 @@
  panels=panel1
  
@@ -9,13 +9,13 @@ diff -up lxqt-panel-1.1.0/panel/resources/panel.conf.1~ lxqt-panel-1.1.0/panel/r
 +width-precent=true
 +iconSize=32
 +panelSize=48
- plugins=mainmenu,desktopswitch,quicklaunch,taskbar,statusnotifier,tray,mount,volume,worldclock,showdesktop
+ plugins=fancymenu,desktopswitch,quicklaunch,taskbar,statusnotifier,tray,mount,volume,worldclock,showdesktop
  position=Bottom
  desktop=0
-@@ -8,29 +12,55 @@ desktop=0
- [mainmenu]
- type=mainmenu
+@@ -11,29 +15,56 @@ alignment=Left
  filterClear=true
+ autoSel=true
+ autoSelDelay=150
 +alignment=left
 +text=OpenMandriva
 +showText=true
@@ -29,10 +29,11 @@ diff -up lxqt-panel-1.1.0/panel/resources/panel.conf.1~ lxqt-panel-1.1.0/panel/r
  type=quicklaunch
  alignment=Left
 +apps/size=4
-+apps/1/desktop=/usr/share/applications/falkon.desktop
++apps/1/desktop=/usr/share/applications/org.kde.falkon.desktop
 +apps/2/desktop=/usr/share/applications/pcmanfm-qt.desktop
 +apps/3/desktop=/usr/share/applications/qterminal.desktop
 +apps/4/desktop=/usr/share/applications/systemsettings.desktop
++
  
  [taskbar]
  type=taskbar
