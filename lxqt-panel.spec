@@ -50,8 +50,9 @@ BuildRequires:	pkgconfig(xcomposite)
 BuildRequires:	pkgconfig(xdamage)
 BuildRequires:	pkgconfig(xrender)
 BuildRequires:	pkgconfig(xcb)
-BuildRequires: pkgconfig(xcb-damage)
+BuildRequires:	pkgconfig(xcb-damage)
 BuildRequires:	cmake(lxqt-menu-data)
+BuildRequires:	cmake(LayerShellQt)
 Requires:	lxqt-menu-data
 Requires: kf6-kwindowsystem-backend-x11 
 Suggests:	xscreensaver
