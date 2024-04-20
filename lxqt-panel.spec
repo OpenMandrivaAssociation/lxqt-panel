@@ -8,12 +8,13 @@ Source0:	%{name}-%{git}.tar.xz
 %else
 Source0:	https://github.com/lxqt/lxqt-panel/releases/download/%{version}/lxqt-panel-%{version}.tar.xz
 %endif
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 License:	LGPLv2.1+
 Group:		Graphical desktop/Other
 Url:		http://lxqt.org
 Patch0:		lxqt-panel-0.8.0-omv-settings.patch
 Patch1:		lxqt-panel-0.12.0-workaround-statusnotifier-crash.patch
+Patch2:		lxqt-panel-2.0.0-fix-plugins-that-call-into-lxqt-panel.patch
 BuildRequires:	cmake(ECM)
 BuildRequires:	icu-devel
 BuildRequires:	lm_sensors-devel
@@ -91,7 +92,7 @@ Development files for the LXQt panel.
 
 %prep
 %autosetup -p1 -n %{name}-%{?git:%{git}}%{!?git:%{version}}
-%cmake_qt5 -DPULL_TRANSLATIONS=NO -G Ninja
+%cmake -DPULL_TRANSLATIONS=NO -G Ninja
 
 %build
 %ninja -C build
