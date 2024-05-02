@@ -8,7 +8,7 @@ Source0:	%{name}-%{git}.tar.xz
 %else
 Source0:	https://github.com/lxqt/lxqt-panel/releases/download/%{version}/lxqt-panel-%{version}.tar.xz
 %endif
-Release:	%{?git:0.%{git}.}2
+Release:	%{?git:0.%{git}.}3
 License:	LGPLv2.1+
 Group:		Graphical desktop/Other
 Url:		http://lxqt.org
@@ -70,7 +70,6 @@ Launcher panel for the LXQt desktop.
 %{_bindir}/lxqt-panel
 %{_datadir}/lxqt/lxqt-panel
 %{_libdir}/lxqt-panel/*.so
-%{_datadir}/lxqt/panel.conf
 %{_datadir}/lxqt/panel/qeyes-types/
 %{_sysconfdir}/xdg/autostart/lxqt-panel.desktop
 %{_mandir}/man1/lxqt-panel.1.*
@@ -100,3 +99,6 @@ Development files for the LXQt panel.
 %install
 %ninja_install -C build
 %find_lang %{name} --with-qt --all-name
+
+# We get this from distro-release
+rm %{buildroot}%{_datadir}/lxqt/panel.conf
