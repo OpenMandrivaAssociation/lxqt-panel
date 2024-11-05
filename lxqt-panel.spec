@@ -2,13 +2,13 @@
 
 Summary:	Launcher panel for the LXQt desktop
 Name:		lxqt-panel
-Version:	2.0.1
+Version:	2.1.0
 %if 0%{?git:1}
 Source0:	%{name}-%{git}.tar.xz
 %else
 Source0:	https://github.com/lxqt/lxqt-panel/releases/download/%{version}/lxqt-panel-%{version}.tar.xz
 %endif
-Release:	%{?git:0.%{git}.}2
+Release:	%{?git:0.%{git}.}1
 License:	LGPLv2.1+
 Group:		Graphical desktop/Other
 Url:		https://lxqt.org
@@ -73,6 +73,11 @@ Launcher panel for the LXQt desktop.
 %{_datadir}/lxqt/panel/qeyes-types/
 %{_sysconfdir}/xdg/autostart/lxqt-panel.desktop
 %{_mandir}/man1/lxqt-panel.1.*
+%dir %{_libdir}/lxqt-panel/backend
+%{_libdir}/lxqt-panel/backend/libwmbackend_kwin_wayland.so
+%{_libdir}/lxqt-panel/backend/libwmbackend_wlroots.so
+%{_libdir}/lxqt-panel/backend/libwmbackend_xcb.so
+%{_datadir}/applications/lxqt-panel.desktop
 %dir %lang(arn) %{_datadir}/lxqt/translations/lxqt-panel
 
 #----------------------------------------------------------------------------
