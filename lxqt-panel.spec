@@ -2,13 +2,13 @@
 
 Summary:	Launcher panel for the LXQt desktop
 Name:		lxqt-panel
-Version:	2.1.4
+Version:	2.2.0
 %if 0%{?git:1}
 Source0:	%{name}-%{git}.tar.xz
 %else
 Source0:	https://github.com/lxqt/lxqt-panel/releases/download/%{version}/lxqt-panel-%{version}.tar.xz
 %endif
-Release:	%{?git:0.%{git}.}2
+Release:	%{?git:0.%{git}.}1
 License:	LGPLv2.1+
 Group:		Graphical desktop/Other
 Url:		https://lxqt.org
