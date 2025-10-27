@@ -12,9 +12,6 @@ Release:	%{?git:0.%{git}.}2
 License:	LGPLv2.1+
 Group:		Graphical desktop/Other
 Url:		https://lxqt.org
-Patch0:		lxqt-panel-0.8.0-omv-settings.patch
-Patch1:		lxqt-panel-0.12.0-workaround-statusnotifier-crash.patch
-Patch2:		lxqt-panel-2.0.0-fix-plugins-that-call-into-lxqt-panel.patch
 BuildRequires:	cmake(ECM)
 BuildRequires:	icu-devel
 BuildRequires:	lm_sensors-devel
@@ -65,6 +62,12 @@ Suggests:	xscreensaver
 %rename razorqt-panel
 %rename razorqt-autosuspend
 %rename razorqt-appswitcher
+
+%patchlist
+lxqt-panel-0.8.0-omv-settings.patch
+lxqt-panel-0.12.0-workaround-statusnotifier-crash.patch
+lxqt-panel-2.0.0-fix-plugins-that-call-into-lxqt-panel.patch
+lxqt-panel-compile.patch
 
 %description
 Launcher panel for the LXQt desktop.

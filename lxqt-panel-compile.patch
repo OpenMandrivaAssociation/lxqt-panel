@@ -1,0 +1,13 @@
+diff -up lxqt-panel-2.2.2/CMakeLists.txt.omv~ lxqt-panel-2.2.2/CMakeLists.txt
+diff -up lxqt-panel-2.2.2/panel/backends/wayland/wlroots/CMakeLists.txt.omv~ lxqt-panel-2.2.2/panel/backends/wayland/wlroots/CMakeLists.txt
+--- lxqt-panel-2.2.2/panel/backends/wayland/wlroots/CMakeLists.txt.omv~	2025-10-27 23:50:14.929779555 +0100
++++ lxqt-panel-2.2.2/panel/backends/wayland/wlroots/CMakeLists.txt	2025-10-27 23:50:27.471131541 +0100
+@@ -6,7 +6,7 @@ set(BACKEND "backend")
+ set(NAME ${PREFIX_NAME}_${PLATFORM_NAME})
+ project(${PROGRAM}_${BACKEND}_${NAME})
+ 
+-find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS WaylandClient Concurrent)
++find_package(Qt6 ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS WaylandClient WaylandClientPrivate Concurrent)
+ find_package(Qt6Xdg)
+ 
+ set(PROG_SHARE_DIR ${CMAKE_INSTALL_FULL_DATAROOTDIR}/lxqt/${PROGRAM}/${BACKEND})
