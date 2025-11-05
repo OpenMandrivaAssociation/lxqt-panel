@@ -2,13 +2,13 @@
 
 Summary:	Launcher panel for the LXQt desktop
 Name:		lxqt-panel
-Version:	2.2.2
+Version:	2.3.0
 %if 0%{?git:1}
 Source0:	%{name}-%{git}.tar.xz
 %else
 Source0:	https://github.com/lxqt/lxqt-panel/releases/download/%{version}/lxqt-panel-%{version}.tar.xz
 %endif
-Release:	%{?git:0.%{git}.}2
+Release:	%{?git:0.%{git}.}1
 License:	LGPLv2.1+
 Group:		Graphical desktop/Other
 Url:		https://lxqt.org
@@ -59,6 +59,12 @@ Requires:	lxqt-menu-data
 Requires: kf6-kwindowsystem-backend-x11 
 Suggests:	xscreensaver
 
+Requires:	%{name}-backend = %{EVRD}
+Requires:	(%{name}-kwin = %{EVRD} if kwin)
+Requires:	(%{name}-wayfire = %{EVRD} if wayfire)
+Requires:	(%{name}-wlroots = %{EVRD} if %{mklibname wlroots})
+Requires:	(%{name}-xcb = %{EVRD} if xlibre)
+
 %rename razorqt-panel
 %rename razorqt-autosuspend
 %rename razorqt-appswitcher
@@ -72,6 +78,53 @@ lxqt-panel-compile.patch
 %description
 Launcher panel for the LXQt desktop.
 
+%package kwin
+Summary:	KWin Wayland backend for the LXQt desktop
+Requires:	%{name} = %{EVRD}
+Requires:	kwin
+Provides:	%{name}-backend = %{EVRD}
+
+%description kwin
+KWin Wayland backend for the LXQt desktop
+
+%files kwin
+%{_libdir}/lxqt-panel/backend/libwmbackend_kwin_wayland.so
+
+%package wayfire
+Summary:	Wayfire backend for the LXQt desktop
+Requires:	%{name} = %{EVRD}
+Requires:	wayfire
+Provides:	%{name}-backend = %{EVRD}
+
+%description wayfire
+Wayfire backend for the LXQt desktop
+
+%files wayfire
+%{_libdir}/lxqt-panel/backend/libwmbackend_wayfire.so
+
+%package wlroots
+Summary:	WLRoots backend for the LXQt desktop
+Requires:	%{name} = %{EVRD}
+Requires:	%{mklibname wlroots}
+Provides:	%{name}-backend = %{EVRD}
+
+%description wlroots
+WLRoots backend for the LXQt desktop
+
+%files wlroots
+%{_libdir}/lxqt-panel/backend/libwmbackend_wlroots.so
+
+%package xcb
+Summary:	Xcb (X11) backend for the LXQt desktop
+Requires:	%{name} = %{EVRD}
+Provides:	%{name}-backend = %{EVRD}
+
+%description xcb
+Xcb (X11) backend for the LXQt desktop
+
+%files xcb
+%{_libdir}/lxqt-panel/backend/libwmbackend_xcb.so
+
 %files -f %{name}.lang
 %dir %{_libdir}/%{name}
 %{_bindir}/lxqt-panel
@@ -81,9 +134,6 @@ Launcher panel for the LXQt desktop.
 %{_sysconfdir}/xdg/autostart/lxqt-panel.desktop
 %{_mandir}/man1/lxqt-panel.1.*
 %dir %{_libdir}/lxqt-panel/backend
-%{_libdir}/lxqt-panel/backend/libwmbackend_kwin_wayland.so
-%{_libdir}/lxqt-panel/backend/libwmbackend_wlroots.so
-%{_libdir}/lxqt-panel/backend/libwmbackend_xcb.so
 %{_datadir}/applications/lxqt-panel.desktop
 %dir %lang(arn) %{_datadir}/lxqt/translations/lxqt-panel
 
@@ -113,4 +163,4 @@ Development files for the LXQt panel.
 %find_lang %{name} --with-qt --all-name
 
 # We get this from distro-release
-rm %{buildroot}%{_datadir}/lxqt/panel.conf
+rm %{buildroot}%{_sysconfdir}/xdg/lxqt/panel.conf
