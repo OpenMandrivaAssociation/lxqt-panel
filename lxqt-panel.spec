@@ -73,7 +73,7 @@ Requires:	(%{name}-xcb = %{EVRD} if xlibre)
 lxqt-panel-0.8.0-omv-settings.patch
 lxqt-panel-0.12.0-workaround-statusnotifier-crash.patch
 lxqt-panel-2.0.0-fix-plugins-that-call-into-lxqt-panel.patch
-#lxqt-panel-compile.patch
+lxqt-panel-compile.patch
 
 %description
 Launcher panel for the LXQt desktop.
