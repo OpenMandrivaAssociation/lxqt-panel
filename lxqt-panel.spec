@@ -156,7 +156,7 @@ Development files for the LXQt panel.
 %autosetup -p1 -n %{name}-%{?git:%{git}}%{!?git:%{version}}
 %build
 %cmake -DPULL_TRANSLATIONS=NO -G Ninja
-%ninja -C build
+%ninja_build
 
 %install
 %ninja_install -C build
