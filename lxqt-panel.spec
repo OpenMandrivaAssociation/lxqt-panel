@@ -55,6 +55,7 @@ BuildRequires:	pkgconfig(xcb)
 BuildRequires:	pkgconfig(xcb-damage)
 BuildRequires:	cmake(lxqt-menu-data)
 BuildRequires:	cmake(LayerShellQt)
+BuildRequires: ninja
 Requires:	lxqt-menu-data
 Requires: kf6-kwindowsystem-backend-x11 
 Suggests:	xscreensaver
@@ -153,9 +154,8 @@ Development files for the LXQt panel.
 
 %prep
 %autosetup -p1 -n %{name}-%{?git:%{git}}%{!?git:%{version}}
-%cmake -DPULL_TRANSLATIONS=NO -G Ninja
-
 %build
+%cmake -DPULL_TRANSLATIONS=NO -G Ninja
 %ninja -C build
 
 %install
