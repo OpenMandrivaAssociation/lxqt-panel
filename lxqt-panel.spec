@@ -8,10 +8,12 @@ Source0:	%{name}-%{git}.tar.xz
 %else
 Source0:	https://github.com/lxqt/lxqt-panel/releases/download/%{version}/lxqt-panel-%{version}.tar.xz
 %endif
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 License:	LGPLv2.1+
 Group:		Graphical desktop/Other
 Url:		https://lxqt.org
+BuildSystem:	cmake
+BuildOption:	-DPULL_TRANSLATIONS=NO
 BuildRequires:	cmake(ECM)
 BuildRequires:	icu-devel
 BuildRequires:	lm_sensors-devel
@@ -55,7 +57,6 @@ BuildRequires:	pkgconfig(xcb)
 BuildRequires:	pkgconfig(xcb-damage)
 BuildRequires:	cmake(lxqt-menu-data)
 BuildRequires:	cmake(LayerShellQt)
-BuildRequires: ninja
 Requires:	lxqt-menu-data
 Requires: kf6-kwindowsystem-backend-x11 
 Suggests:	xscreensaver
@@ -152,15 +153,6 @@ Development files for the LXQt panel.
 
 #----------------------------------------------------------------------------
 
-%prep
-%autosetup -p1 -n %{name}-%{?git:%{git}}%{!?git:%{version}}
-%build
-%cmake -DPULL_TRANSLATIONS=NO -G Ninja
-%ninja_build
-
-%install
-%ninja_install -C build
-%find_lang %{name} --with-qt --all-name
-
+%install -a
 # We get this from distro-release
 rm %{buildroot}%{_sysconfdir}/xdg/lxqt/panel.conf
